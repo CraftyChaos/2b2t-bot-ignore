@@ -34,6 +34,7 @@ public class BotList {
 	}
 	
 	private void updateList() {
+		BotIgnore.logger.error("Updating Bot List");
 		try {
 			URL url = new URL(this.listUrl);
 			BufferedReader input = new BufferedReader(new InputStreamReader(url.openStream()));
