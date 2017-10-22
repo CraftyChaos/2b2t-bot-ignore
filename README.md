@@ -25,4 +25,6 @@ cd 2b2t-bot-ignore
 cp build/libs/botignore.* <path to mineraft mod directory>
 ```
 
+## TODO
 
+Remove bots from ignorelist if UUIDs are removed from master list.  Priority: Low.
