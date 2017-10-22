@@ -1,1 +1,1 @@
-# 2b2t-auto-ignore
+# 2B2T: Bot Ignore

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "2b2tautoignore",
+  "name": "2b2t Auto Ignore",
+  "description": "Auto ignores spam bots",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["CraftyChaos"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
