@@ -1,10 +1,15 @@
 package com.craftychaos.botignore;
 
 import java.util.TimerTask;
+
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentString;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -18,7 +23,6 @@ public class BotList {
 		this.interval = interval;
 		this.listUrl = listUrl;
 		this.setBotList(new ArrayList<String>());
-		
 		scheduleUpdate();
 	}
 	
@@ -30,14 +34,22 @@ public class BotList {
 			public void run() {
 				updateList();
 			}
-		}, 0, 1000 * 60 * this.interval);
+		}, 60000, 1000 * 60 * this.interval);
 	}
 	
 	private void updateList() {
-		BotIgnore.logger.error("Updating Bot List");
+		ITextComponent statusMessage = new TextComponentString("BotIgnore: Updating bot list");
 		try {
+			BotIgnore.getMinecraft().player.sendMessage(statusMessage);
+			BotIgnore.logger.info("Updating Bot List");
 			URL url = new URL(this.listUrl);
-			BufferedReader input = new BufferedReader(new InputStreamReader(url.openStream()));
+			URLConnection con = url.openConnection();
+			con.setUseCaches(false);
+			
+			BufferedReader input = new BufferedReader(
+				new InputStreamReader(con.getInputStream())
+			);
+			
 			List<String> theList = new ArrayList<String>();
 			String line;
 			while ((line = input.readLine()) != null) {

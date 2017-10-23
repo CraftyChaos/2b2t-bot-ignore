@@ -8,13 +8,11 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.network.NetHandlerPlayClient;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class ChatListener {
-	private final Minecraft minecraft = Minecraft.getMinecraft();
 	private final String chatPattern = "<(.*?)> (.*)";
 	private List<String> recentlyBlocked = new ArrayList<String>();
 	private Long interval = (long) 1;
@@ -27,7 +25,7 @@ public class ChatListener {
 		
 		// find chat messages
 		if (haystack.find() ) {
-			final NetHandlerPlayClient netHandlerPlayClient = minecraft.getConnection();
+			final NetHandlerPlayClient netHandlerPlayClient = BotIgnore.getMinecraft().getConnection();
 			String theNick = haystack.group(1);
 			String theMessage = haystack.group(2);
 			UUID theNickUUID = netHandlerPlayClient.getPlayerInfo(theNick).getGameProfile().getId();
@@ -57,7 +55,7 @@ public class ChatListener {
 							@Override
 							public void run() {
 								BotIgnore.logger.info("Match: " + listEntry);
-								Minecraft.getMinecraft().player.sendChatMessage( "/ignorehard " + theNick);
+								BotIgnore.getMinecraft().player.sendChatMessage( "/ignorehard " + theNick);
 								
 								// clean up
 								recentlyBlocked.remove(listEntry);
