@@ -9,7 +9,9 @@ A minecraft mod for 2b2t to auto-ignore bots using /ignorehard.  This mod will f
 This mod requires Minecraft Forge
 
 **Release package**
-1. Drop the released .jar into your minecraft mod directory
+1. Download: https://github.com/CraftyChaos/2b2t-bot-ignore/releases/download/v1.2/botignore-1.2.jar
+2. Drop the released .jar into your minecraft mod directory
+3. Remove old version if installed
 
 **Build package**
 ```
