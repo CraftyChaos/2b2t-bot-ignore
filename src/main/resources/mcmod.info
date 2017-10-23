@@ -7,6 +7,7 @@
   "mcversion": "${mcversion}",
   "url": "https://github.com/CraftyChaos/2b2t-bot-ignore",
   "updateUrl": "",
+  "updateJSON": "https://raw.githubusercontent.com/CraftyChaos/2b2t-bot-ignore/master/update.json",
   "authorList": ["CraftyChaos"],
   "credits": "",
   "logoFile": "",

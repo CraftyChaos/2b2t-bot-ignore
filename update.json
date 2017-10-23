@@ -1,0 +1,12 @@
+{
+  "homepage": "https://github.com/CraftyChaos/2b2t-bot-ignore/releases",
+  "1.12.2": {
+    "1.0": "Initial Release",
+    "1.1": "Minor changes",
+    "1.2": "Disabled fetch cache\nAdded message on update",
+  },
+  "promos": {
+    "1.12.2-latest": "lastest",
+    "1.12.2-recommended": "1.2",
+  }
+}
