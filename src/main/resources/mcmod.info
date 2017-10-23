@@ -1,11 +1,11 @@
 [
 {
-  "modid": "2b2tautoignore",
-  "name": "2b2t Auto Ignore",
+  "modid": "botignore",
+  "name": "Bot Ignore",
   "description": "Auto ignores spam bots",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/CraftyChaos/2b2t-bot-ignore",
   "updateUrl": "",
   "authorList": ["CraftyChaos"],
   "credits": "",
