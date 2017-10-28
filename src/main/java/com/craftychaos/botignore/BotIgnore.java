@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class BotIgnore {
 	private final static Minecraft minecraft = Minecraft.getMinecraft();
 	public static final String MODID = "botignore";
-	public static final String VERSION = "latest";
+	public static final String VERSION = "1.3";
     public static final String UPDATE = "https://raw.githubusercontent.com/CraftyChaos/2b2t-bot-ignore/master/update.json";
 	public static final Integer updateInterval = 5;
 	public static final String listUrl = "https://raw.githubusercontent.com/CraftyChaos/2b2t-bot-ignore/master/signatures/block.txt";
