@@ -1,6 +1,7 @@
 package com.craftychaos.botignore;
 
 import java.util.TimerTask;
+import java.util.stream.Collectors;
 
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
@@ -56,6 +57,12 @@ public class BotList {
 				theList.add(line);
 			}
 			input.close();
+			
+			List<String> result = theList.stream().filter(elem -> !getBotList().contains(elem)).collect(Collectors.toList());
+			if (result.size() > 0) {
+				ITextComponent diff = new TextComponentString("Added: " + result.toString());
+				BotIgnore.getMinecraft().player.sendMessage(diff);
+			}
 			
 			setBotList(theList);
 		} catch (IOException e) {
